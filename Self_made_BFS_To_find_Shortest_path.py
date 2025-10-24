@@ -2,6 +2,9 @@
 #the input format is basically for each node, enter the nodes adjacent to it.
 #id suggest to create an input file and do : python3 {saved_file_name}.py < {inputfilename}.txt
 #eg inputfile:
+
+#Source used to understand the algo: https://www.geeksforgeeks.org/dsa/shortest-path-unweighted-graph/
+
 ''' input_file_example.txt : 
 7
 1,2
@@ -29,7 +32,6 @@ starting_node = int(input("Enter the node to start from : "))
 output = []
 visited = [0]*n
 order = [starting_node]
-print("The BFS Order is: ")
 distances = [-1]*n
 prev_node = [-1]*n
 distances[starting_node]=0
@@ -55,4 +57,5 @@ while prev_node[current_node]!=-1:
     current_node =prev_node[current_node]
 path = reversed_path[::-1]
 
-print("Shortest path = :\n ",path)
+print("The BFS Order is: \n",output)
+print("Shortest path : \n ",path)
